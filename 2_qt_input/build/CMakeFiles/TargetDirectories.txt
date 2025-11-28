@@ -1,0 +1,8 @@
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/ExpenseEntryApp.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/edit_cache.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/rebuild_cache.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/list_install_components.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/install.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/install/local.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/install/strip.dir
+/home/dan/Code/cpp_basics/2_qt_input/build/CMakeFiles/ExpenseEntryApp_autogen.dir
