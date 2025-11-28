@@ -1,4 +1,4 @@
-# C++ Cheat Sheet
+# C++ Cheat Sheet 
 
 This guide is a collection of C++ code snippets that cover the basics of the language for coding interviews. It's organized sequentially to help JavaScript/Python developers learn C++ syntax and features.
 
