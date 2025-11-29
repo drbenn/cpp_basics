@@ -3,12 +3,20 @@
 #include <QFile>
 #include <QCoreApplication>
 #include <QMessageBox> // Used for user feedback if the file load fails
+#include <QDebug>
+#include <QWebEngineSettings>
+#include <QWebEnginePage>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     // 1. Instantiate the QWebEngineView and set this MainWindow as its parent
     webView = new QWebEngineView(this);
+
+    // Enable developer tools and other useful settings
+    webView->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, true);
+    webView->settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, true);
+    webView->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, true);
     
     // 2. Set the webView to take up the entire area of the main window
     setCentralWidget(webView);
@@ -18,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     // output folder for a 'npm run build' command in a Vite project.
     QString currentDir = QCoreApplication::applicationDirPath();
     // Assuming the 'dist' folder is placed alongside the executable
-    QString htmlFilePath = currentDir + "/expense_frontend/dist/index.html"; 
+    QString htmlFilePath = currentDir + "/expense-frontend/dist/index.html"; 
 
     // Debug output to help troubleshoot
     qDebug() << "Looking for HTML file at:" << htmlFilePath;
