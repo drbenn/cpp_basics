@@ -18,20 +18,25 @@ MainWindow::MainWindow(QWidget *parent)
     // output folder for a 'npm run build' command in a Vite project.
     QString currentDir = QCoreApplication::applicationDirPath();
     // Assuming the 'dist' folder is placed alongside the executable
-    QString htmlFilePath = currentDir + "expense_frontend/dist/index.html"; 
+    QString htmlFilePath = currentDir + "/expense_frontend/dist/index.html"; 
+
+    // Debug output to help troubleshoot
+    qDebug() << "Looking for HTML file at:" << htmlFilePath;
     
     // Convert the local file path to a QUrl for the web engine
     QUrl localFileUrl = QUrl::fromLocalFile(htmlFilePath);
 
     // 4. Check for the file existence and load it
     if (QFile::exists(htmlFilePath)) {
+        qDebug() << "File found! Loading...";
         webView->load(localFileUrl);
     } else {
+        qDebug() << "File NOT found!";
         // If the file is missing, display a critical error message
-        QMessageBox::critical(this, "File Error", 
-            "Failed to find the frontend file: 'index.html'. Please ensure the Vite 'dist' folder is correctly deployed next to the executable. "
-            "Path checked: " + htmlFilePath
-        );
+        QString errorMsg = "Failed to find the frontend file: 'index.html'. "
+                          "Please ensure the Vite 'dist' folder is correctly deployed next to the executable.\n\n"
+                          "Path checked: " + htmlFilePath;
+        QMessageBox::critical(this, "File Error", errorMsg);
     }
 }
 
